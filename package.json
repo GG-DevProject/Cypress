@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run && node sendReport.js"
+    "test": "cypress run && node sendReport.js",
+    "test:edge": "cypress run --browser edge",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:electron": "cypress run --browser electron",
+    "test:all": "npm-run-all --parallel test:chrome test:firefox test:edge test:electron"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +18,8 @@
     "cypress": "^13.16.1",
     "cypress-mochawesome-reporter": "^3.8.2",
     "cypress-multi-reporters": "^2.0.4",
-    "mocha-junit-reporter": "^2.2.1"
+    "mocha-junit-reporter": "^2.2.1",
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
     "aggregate-error": "^3.1.0",
